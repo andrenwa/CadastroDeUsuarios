@@ -1,6 +1,7 @@
 package br.com.treeeway.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -12,7 +13,7 @@ public class UsuarioDao extends Dao<Usuario> {
 	
 	public void inserir(Usuario usuario) {
 		StringBuilder SQL= new StringBuilder();
-		SQL.append("INSERT INTO USUARIO VALUES (NOME,NASCIMENTO,CPF,PROFISSAO,FORMACAO ) VALUES (?,?,?,?,?) ");
+		SQL.append("INSERT INTO USUARIO (NOME,NASCIMENTO,CPF,PROFISSAO,FORMACAO ) VALUES (?,?,?,?,?) ");
 		
 		
 		Connection conn;
@@ -20,10 +21,12 @@ public class UsuarioDao extends Dao<Usuario> {
 			conn = FabricaConexao.getConexao();
 			PreparedStatement sql = conn.prepareStatement(SQL.toString());
 			sql.setString(1, usuario.getNome());
-			sql.setString(2, usuario.getNascimento());
+			sql.setDate(2, new Date(usuario.getNascimento().getTime()));
 			sql.setString(3, usuario.getCpf());
-			sql.setString(4, usuario.getProfissao().name());
-			sql.setString(5, usuario.getFormacao().name());
+			sql.setString(4, "pedreiro");
+			sql.setString(5, "ensimo medio");
+			
+			sql.executeUpdate();
 			
 			
 		} catch (SQLException e) {

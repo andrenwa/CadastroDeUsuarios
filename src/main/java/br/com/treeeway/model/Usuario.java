@@ -1,9 +1,15 @@
 package br.com.treeeway.model;
 
+import java.util.Date;
+
 public class Usuario implements Entidade{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1438017503868760671L;
 	private String nome;
-	private String nascimento;
+	private Date nascimento;
 	private String cpf;
 	private EnumSexo sexo;
 	private EnumFormacao formacao;
@@ -22,11 +28,11 @@ public class Usuario implements Entidade{
 		this.nome = nome;
 	}
 
-	public String getNascimento() {
+	public Date getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(String nascimento) {
+	public void setNascimento(Date nascimento) {
 		this.nascimento = nascimento;
 	}
 
