@@ -5,13 +5,13 @@
 	version="2.5">
 	<display-name>CadastroDeUsuarios</display-name>
 	<welcome-file-list>
-		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>CadastrodeUsuario.xhtml</welcome-file>
 	</welcome-file-list>
 
 
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>omega</param-value>
+		<param-value>afterdark</param-value>
 	</context-param>
 
 	<servlet>

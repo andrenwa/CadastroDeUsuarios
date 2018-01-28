@@ -1,126 +1,222 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-</h:head>
-<h:body>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <link href="resources/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <title>Cadastro De Usuarios</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
 
-	<h1>Cadastro De Usuario</h1>
-	<h:form>
-		<p:fieldset legend="Dados Pessoais" style="margin-bottom:20px">
-			<h:panelGrid columns="2" cellpadding="5">
-				<img src="imagen/usuario.png" />
-				<h:panelGrid columns="2" cellpadding="5">
+        <p:layout fullPage="true">
 
-					<p:outputLabel value="Nome" />
-					<p:inputText size="50" value="#{usuarioBean.nome}" />
+            <center> <p:layoutUnit position="north" header="Cadastro De Usuarios" resizable="false" closable="false" collapsible="false">
 
-					<p:outputLabel  value="Nascimento" />
-					<p:calendar id="popup" value="#{usuarioBean.nascimento}" />
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south"  header="Andrenwa Desenvolvimento de Sistemas - By Professor Erivam 3 Way cursos e treinamentos. " resizable="false" closable="false" collapsible="false">
 
 
 
-
-					<p:outputLabel value="Sexo" />
-					<h:selectOneRadio>
-						<f:selectItem itemValue="Masculino" itemLabel="Masculino" />
-						<f:selectItem itemValue="Feminino" itemLabel="Feminino" />
-					</h:selectOneRadio>
-
-					<h:panelGrid columns="2">
-						<p:outputLabel value="Formacao" />
-						<p:selectOneMenu>
-							<f:selectItem itemLabel="Selecione" />
-						</p:selectOneMenu>
-					</h:panelGrid>
-					<h:panelGrid columns="2">
-						<p:outputLabel value="Profissao" />
-						<p:selectOneMenu>
-							<f:selectItem itemLabel="Selecione" />
-						</p:selectOneMenu>
-					</h:panelGrid>
-
-					<p:outputLabel value="CPF" />
-					<p:inputText value="#{usuarioBean.usuario.cpf}" />
-
-				</h:panelGrid>
+                </p:layoutUnit></center>
 
 
 
 
-			</h:panelGrid>
 
+            <p:layoutUnit position="center">
 
-		</p:fieldset>
+                <h:form>
+                    <p:fieldset class="edit" legend="Dados Pessoais" style="margin-bottom:20px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <img src="imagen/usuario.png" />
+                            <h:panelGrid columns="2" cellpadding="5">
 
-		<p:fieldset legend="Contato" style="margin-bottom:20px">
-			<h:panelGrid columns="2">
-				<img src="imagen/contato.png" />
+                                <p:outputLabel  value="Nome" />
+                                <p:inputText size="52" value="#{usuarioBean.nome}" />
 
-
-				<h:panelGrid columns="2" cellpadding="5">
-
-					<p:outputLabel value="Email" />
-					<p:inputText />
-
-					<p:outputLabel value="Telefone" />
-					<p:inputText />
-
-					<p:outputLabel value="Celular" />
-					<p:inputText />
-
-					<p:outputLabel value="Skype" />
-					<p:inputText />
-
-				</h:panelGrid>
-			</h:panelGrid>
-		</p:fieldset>
-
-
-		<p:fieldset legend="Endereco" style="margin-bottom:20px">
-			<h:panelGrid columns="2" cellpadding="5">
-				<img src="imagen/endereco.png" />
-
-				<h:panelGrid columns="2" cellpadding="5">
-
-					<p:outputLabel value="Logradouro" />
-					<p:inputText />
-
-					<h:panelGrid columns="2">
-						<p:outputLabel value="Numero" />
-						<p:inputText />
-
-						<p:outputLabel value="Bairro" />
-						<p:inputText />
-					</h:panelGrid>
-
-					<h:panelGrid columns="2">
-						<p:outputLabel value="Cep" />
-						<p:inputText />
-
-						<p:outputLabel value="Cidade" />
-						<p:inputText />
-					</h:panelGrid>
-
-
-					<p:outputLabel value="Estado" />
-					<p:selectOneMenu>
-						<f:selectItem itemLabel="Selecione" />
-					</p:selectOneMenu>
-
-					<p:outputLabel value="Complemento" />
-					<p:inputText />
+                                <p:outputLabel  value="Nascimento" />
+                                <p:calendar size="8" id="popup" value="#{usuarioBean.nascimento}" />
 
 
 
-				</h:panelGrid>
-			</h:panelGrid>
 
-		</p:fieldset>
+                                <p:outputLabel  value="Sexo" />
+                                <h:selectOneRadio>
+                                    <f:selectItem itemValue="Masculino" itemLabel="Masculino" />
+                                    <f:selectItem itemValue="Feminino" itemLabel="Feminino" />
+                                </h:selectOneRadio>
 
-		<p:commandButton value="Salvar Cliente" action="#{usuarioBean.salvar}" />
-		<p:commandButton value="Limpar Dados" />
-	</h:form>
-</h:body>
+                                <h:panelGrid columns="2">
+                                    <p:outputLabel  value="Formacao" />
+                                    <p:selectOneMenu>
+                                        <f:selectItem itemLabel="Ensino Fundamental" />
+                                        <f:selectItem itemLabel="Ensino Medio" />
+                                        <f:selectItem itemLabel="Ensino Superior" />
+                                        <f:selectItem itemLabel="Selecione" />
+                                    </p:selectOneMenu>
+                                </h:panelGrid>
+                                <h:panelGrid columns="2">
+                                    <p:outputLabel  value="Profissao" />
+                                    <p:selectOneMenu>
+                                        <f:selectItem itemLabel="Administrador de Rede" />
+                                        <f:selectItem itemLabel="Administrador(a)" />
+                                        <f:selectItem itemLabel="Administrador(a) de Banco de Dados" />
+                                        <f:selectItem itemLabel="Administrador(a) de Empresas" />
+                                        <f:selectItem itemLabel="Administrador(a) de Recursos Humanos" />
+                                        <f:selectItem itemLabel="Administrador(a) Hospitalar" />
+                                        <f:selectItem itemLabel="Administradora de Servicos do Lar" />
+                                        <f:selectItem itemLabel="Analista Contabil" />
+                                        <f:selectItem itemLabel="Analista de Captacao" />
+                                        <f:selectItem itemLabel="Analista de Contratos" />
+                                        <f:selectItem itemLabel="Analista de Controladoria" />
+                                        <f:selectItem itemLabel="Analista de Controle Interno" />
+                                        <f:selectItem itemLabel="Analista de Credito" />
+                                        <f:selectItem itemLabel="Analista de Custos" />
+                                        <f:selectItem itemLabel="Analista de Departamento Pessoal" />
+                                        <f:selectItem itemLabel="Analista de Exportacao" />
+                                        <f:selectItem itemLabel="Analista de Faturamento" />
+                                        <f:selectItem itemLabel="Analista de IT" />
+                                        <f:selectItem itemLabel="Analista de Laboratorio" />
+                                        <f:selectItem itemLabel="Analista de Pessoal" />
+                                        <f:selectItem itemLabel="Analista de Recursos Humanos" />
+
+                                        <f:selectItem itemLabel="Analista de Sistemas" />
+                                        <f:selectItem itemLabel="Analista de Suporte" />
+                                        <f:selectItem itemLabel="Analista de Suporte Pleno" />
+                                        <f:selectItem itemLabel="Analista de Tecidos" />
+                                        <f:selectItem itemLabel="Analista de Vendas" />
+
+
+
+                                        <f:selectItem itemLabel="Selecione" />
+                                    </p:selectOneMenu>
+                                </h:panelGrid>
+
+                                <p:outputLabel  value="CPF" />
+                                <p:inputMask size="52" mask="999.999.999-99"  value="#{usuarioBean.usuario.cpf}" />
+
+                            </h:panelGrid>
+
+
+
+
+                        </h:panelGrid>
+
+
+                    </p:fieldset>
+
+                    <p:fieldset class="edit" legend="Contato" style="margin-bottom:20px">
+                        <h:panelGrid columns="2">
+                            <img src="imagen/contato.png" />
+
+
+                            <h:panelGrid columns="2" cellpadding="5">
+
+                                <p:outputLabel value="Email" />
+                                <p:inputText />
+
+                                <p:outputLabel value="Telefone" />
+                                <p:inputMask mask="(99)9999-9999"/>
+
+                                <p:outputLabel value="Celular" />
+                                <p:inputMask mask="(99)99999-9999"/>
+
+                                <p:outputLabel value="Skype" />
+                                <p:inputText />
+
+                            </h:panelGrid>
+                        </h:panelGrid>
+                    </p:fieldset>
+
+
+                    <p:fieldset class="edit" legend="Endereco" style="margin-bottom:20px">
+                        <h:panelGrid columns="2" cellpadding="5">
+                            <img src="imagen/endereco.png" />
+
+                            <h:panelGrid columns="2" cellpadding="5">
+
+                                <p:outputLabel value="Logradouro" />
+                                <p:inputText size="27" />
+
+                                <h:panelGrid columns="2">
+                                    <p:outputLabel value="Numero" />
+                                    <p:inputText />
+
+                                    <p:outputLabel value="Bairro" />
+                                    <p:inputText />
+                                </h:panelGrid>
+
+                                <h:panelGrid columns="2">
+                                    <p:outputLabel value="Cep" />
+                                    <p:inputMask size="20"  mask="99.999-999"/>
+
+                                    <p:outputLabel value="Cidade" />
+                                    <p:inputText />
+                                </h:panelGrid>
+
+
+                                <p:outputLabel value="Estado" />
+                                <p:selectOneMenu >
+
+                                    <f:selectItem itemLabel="AC" />
+                                    <f:selectItem itemLabel="AL" />
+                                    <f:selectItem itemLabel="AM" />
+                                    <f:selectItem itemLabel="BA" />
+                                    <f:selectItem itemLabel="CE" />
+                                    <f:selectItem itemLabel="DF" />
+                                    <f:selectItem itemLabel="ES" />
+                                    <f:selectItem itemLabel="GO" />
+                                    <f:selectItem itemLabel="MA" />
+                                    <f:selectItem itemLabel="MT" />
+                                    <f:selectItem itemLabel="MS" />
+                                    <f:selectItem itemLabel="MG" />
+                                    <f:selectItem itemLabel="PA" />
+                                    <f:selectItem itemLabel="PB" />
+                                    <f:selectItem itemLabel="PR" />
+                                    <f:selectItem itemLabel="PE" />
+                                    <f:selectItem itemLabel="PI" />
+                                    <f:selectItem itemLabel="RJ" />
+                                    <f:selectItem itemLabel="RN" />
+                                    <f:selectItem itemLabel="RS" />
+                                    <f:selectItem itemLabel="RO" />
+                                    <f:selectItem itemLabel="RR" />
+                                    <f:selectItem itemLabel="SC" />
+                                    <f:selectItem itemLabel="SP" />
+                                    <f:selectItem itemLabel="SE" />
+                                    <f:selectItem itemLabel="TO" />
+                                    <f:selectItem itemLabel="Selecione" />
+                                </p:selectOneMenu>
+
+                                <p:outputLabel value="Complemento" />
+                                <p:inputText size="27"/>
+
+
+
+                            </h:panelGrid>
+                        </h:panelGrid>
+
+                    </p:fieldset>
+
+                    <center>
+                        <p:commandButton value="Salvar Cliente" action="#{usuarioBean.salvar}" />
+                        <p:commandButton value="Limpar Dados" />
+                    </center>
+
+                </h:form>
+            </p:layoutUnit>
+
+        </p:layout>
+
+
+
+    </h:body>
 </html>

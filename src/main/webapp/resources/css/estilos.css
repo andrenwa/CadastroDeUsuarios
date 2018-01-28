@@ -1,0 +1,15 @@
+.edit{
+    background-color:coral!important;
+} 
+
+h1{
+    color: azure;
+}
+
+body{
+    background-color:buttontext!important;
+}
+
+.ui-widget, .ui-widget .ui-widget{
+	font-size:98%;
+}
