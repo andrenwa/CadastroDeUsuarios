@@ -2,12 +2,18 @@ package br.com.treeeway.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Usuario implements Entidade{
 
 	/**
-	 * 
+	 *  
 	 */
 	private static final long serialVersionUID = -1438017503868760671L;
+	
+	@Id
+	private Long id;
 	private String nome;
 	private Date nascimento;
 	private String cpf;
@@ -82,6 +88,14 @@ public class Usuario implements Entidade{
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 
